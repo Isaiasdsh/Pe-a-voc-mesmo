@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chama Burguer - Surpreenda-se!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Chama Burguer">
+            <h1>Chama Burguer</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="menu" class="menu-container">
+            <!-- Itens do cardápio -->
+            <div class="menu-item">
+                <h2 class="item-title">CHAMA Clássico</h2>
+                <div class="price-options">
+                    <span>Simples: R$25</span>
+                    <span>Duplo: R$33</span>
+                </div>
+                <p>Pão, Hambúrguer de carne bovina, queijo mussarela, cebola roxa, alface, tomate, maionese da casa.</p>
+                <div class="customize">
+                    <h3>Customize seu pedido</h3>
+                    <div class="option">
+                        <p>Tamanho:</p>
+                        <label><input type="radio" name="size-classico" value="single" checked> Simples</label>
+                        <label><input type="radio" name="size-classico" value="double"> Duplo</label>
+                    </div>
+                    <div class="option">
+                        <p>Pão:</p>
+                        <label><input type="radio" name="bread-classico" value="brioche" checked> Brioche</label>
+                        <label><input type="radio" name="bread-classico" value="parmesao"> Parmesão</label>
+                    </div>
+                    <div class="option">
+                        <p>Remover Ingredientes:</p>
+                        <label><input type="checkbox" value="cebola" class="ingredient-classico"> Cebola Roxa</label>
+                        <label><input type="checkbox" value="alface" class="ingredient-classico"> Alface</label>
+                        <label><input type="checkbox" value="tomate" class="ingredient-classico"> Tomate</label>
+                        <label><input type="checkbox" value="maionese" class="ingredient-classico"> Maionese da Casa</label>
+                    </div>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('CHAMA Clássico', 'size-classico', 'bread-classico', 'ingredient-classico')">Adicionar ao Carrinho</button>
+            </div>
+            
+            <!-- Mais itens podem ser adicionados abaixo -->
+        </section>
+
+        <!-- Carrinho -->
+        <section id="cart">
+            <h2>Seu Carrinho</h2>
+            <div id="cart-content"></div>
+            <div id="delivery-fee"></div>
+            <div id="total-price"></div>
+        </section>
+
+        <!-- Informações do cliente e finalização -->
+        <section id="customer-info">
+            <h2>Informações do Cliente</h2>
+            <label for="customer-name">Nome do Cliente:</label>
+            <input type="text" id="customer-name" placeholder="Digite seu nome">
+            <label for="address">Endereço Completo:</label>
+            <input type="text" id="address" placeholder="Rua, Número, Bairro">
+            <label for="reference">Ponto de Referência:</label>
+            <input type="text" id="reference" placeholder="Ex: Perto do Supermercado X">
+        </section>
+
+        <section id="payment">
+            <h2>Forma de Pagamento</h2>
+            <label><input type="radio" name="payment-method" value="dinheiro" checked> Dinheiro</label>
+            <label><input type="radio" name="payment-method" value="cartao"> Cartão</label>
+            <label><input type="radio" name="payment-method" value="pix"> Pix</label>
+
+            <div id="pix-section" style="display: none;">
+                <h3>Chave Pix: CNPJ 48243861000127</h3>
+                <p>Envie o comprovante junto com o pedido pelo WhatsApp.</p>
+            </div>
+        </section>
+
+        <button class="finalize-btn" onclick="finalizeOrder()">Finalizar Pedido</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
